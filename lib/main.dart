@@ -18,15 +18,18 @@ void main() {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var leftDiceNumber = 1;
+    var rightDiceNumber = 3;
+
     return Center(
       child: Row(
         children: <Widget>[
           Expanded(
             child: FlatButton(
               onPressed: () {
-                print('Ciao Flax!!! - sx');
+                printNumber(5);
               },
-              child: Image.asset('images/dice1.png'),
+              child: Image.asset('images/dice$leftDiceNumber.png'),
             ),
           ),
           Expanded(
@@ -34,11 +37,15 @@ class DicePage extends StatelessWidget {
               onPressed: () {
                 print('Ciao Flax!!! - dx');
               },
-              child: Image.asset('images/dice1.png'),
+              child: Image.asset('images/dice$rightDiceNumber.png'),
             ),
           ),
         ],
       ),
     );
   }
+}
+
+void printNumber(int number) {
+  print('print number: ' + number.toString());
 }
